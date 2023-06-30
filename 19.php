@@ -1,59 +1,50 @@
 <?php
 // Define variables and set to empty values
 $nameErr = $usernameErr = $ageErr = $passwordErr = $confirmPasswordErr = "";
-$name = $username = $age = $password = $confirmPassword = "";
-
-// Function to sanitize and validate input data
-function sanitizeInput($data) {
-    $data = trim($data);
-    $data = stripslashes($data);
-    $data = htmlspecialchars($data);
-    return $data;
-}
 
 // Validate form on submission
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Validate name
     if (empty($_POST["name"])) {
-        $nameErr = "Name is required";
+        $nameErr = "required";
     } else {
-        $name = sanitizeInput($_POST["name"]);
-        if (!preg_match("/^[a-zA-Z ]*$/", $name)) {
-            $nameErr = "Name cannot have numbers and special characters";
+        if (!preg_match("/^[a-zA-Z ]*$/", $_POST["name"])) {
+            $nameErr = "Only text allowed";
         }
     }
-    
+
     // Validate username
     if (empty($_POST["username"])) {
-        $usernameErr = "Username is required";
+        $usernameErr = "required";
     } else {
-        $username = sanitizeInput($_POST["username"]);
-        if (strlen($username) < 8 || !preg_match("/^[a-zA-Z]/", $username)) {
+        if (strlen($_POST["username"]) < 8 || !preg_match("/^[a-zA-Z]/", $_POST["username"])) {
             $usernameErr = "Username should be of minimum 8 characters and must begin with an alphabet";
         }
     }
-    
+
     // Validate age
     if (empty($_POST["age"])) {
-        $ageErr = "Age is required";
+        $ageErr = "required";
     } else {
-        $age = sanitizeInput($_POST["age"]);
+        $age = $_POST["age"];
         if (!is_numeric($age) || $age < 16) {
             $ageErr = "Age cannot be less than 16 years";
         }
     }
-    
+
+
+
     // Validate password and confirm password
     if (empty($_POST["password"])) {
-        $passwordErr = "Password is required";
+        $passwordErr = "required";
     } else {
-        $password = sanitizeInput($_POST["password"]);
+        $password = $_POST["password"];
     }
-    
+
     if (empty($_POST["confirm_password"])) {
-        $confirmPasswordErr = "Confirm Password is required";
+        $confirmPasswordErr = "required";
     } else {
-        $confirmPassword = sanitizeInput($_POST["confirm_password"]);
+        $confirmPassword = $_POST["confirm_password"];
         if ($password != $confirmPassword) {
             $confirmPasswordErr = "Password and Confirm Password must match";
         }
@@ -71,29 +62,24 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <body>
     <h2>Form Validation</h2>
-    <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
-        <label for="name">Name:</label>
-        <input type="text" name="name" value="<?php echo $name; ?>">
+    <form method="post" action="">
+        <input type="text" name="name" placeholder="Name">
         <span><?php echo $nameErr; ?></span>
         <br><br>
 
-        <label for="username">Username:</label>
-        <input type="text" name="username" value="<?php echo $username; ?>">
+        <input type="text" name="username" placeholder="Username">
         <span><?php echo $usernameErr; ?></span>
         <br><br>
 
-        <label for="age">Age:</label>
-        <input type="text" name="age" value="<?php echo $age; ?>">
+        <input type="text" name="age" placeholder="Age">
         <span><?php echo $ageErr; ?></span>
         <br><br>
 
-        <label for="password">Password:</label>
-        <input type="password" name="password" value="<?php echo $password; ?>">
+        <input type="password" name="password" placeholder="Password">
         <span><?php echo $passwordErr; ?></span>
         <br><br>
 
-        <label for="confirm_password">Confirm Password:</label>
-        <input type="password" name="confirm_password" value="<?php echo $confirmPassword; ?>">
+        <input type="password" name="confirm_password" placeholder="Confirm Password">
         <span><?php echo $confirmPasswordErr; ?></span>
         <br><br>
 

@@ -2,12 +2,10 @@
 $studentInfo = [
     "name" => "John Doe",
     "age" => 20,
-    "university" => "ABC University",
-    "major" => "Computer Science"
 ];
 
 // Using for loop
-echo "Using for loop:<br>";
+echo "for loop:<br>";
 $keys = array_keys($studentInfo);
 $size = count($keys);
 

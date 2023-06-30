@@ -6,16 +6,7 @@ print_r($numericArray);
 echo "<br>";
 
 // Associative array
-$associativeArray = ["name" => "John", "age" => 25, "city" => "New York"];
+$associativeArray = ["name" => "John", "age" => 25, "city" => "ktm"];
 var_dump($associativeArray);
 print_r($associativeArray);
 echo "<br>";
-
-// Multidimensional array
-$multidimensionalArray = [
-    ["apple", "banana", "cherry"],
-    [1, 2, 3],
-    ["red", "yellow", "blue"]
-];
-var_dump($multidimensionalArray);
-print_r($multidimensionalArray);

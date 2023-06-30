@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html>
 
 <head>
@@ -6,7 +5,7 @@
 </head>
 
 <body>
-    <form method="POST" action="">
+    <form method="POST">
         <input type="text" name="num1" id="num1" placeholder="num 1">
         <br>
         <input type="text" name="num2" id="num2" placeholder="num 2">

@@ -10,18 +10,18 @@ function checkAge($age)
 }
 
 // b. Function to find the sum of second largest and smallest elements in an array
-function sumSecondLargestAndSmallest($numbers)
+function check($n)
 {
-    sort($numbers);
-    $size = count($numbers);
+    sort($n);
+    $size = count($n);
 
-    return $numbers[1] + $numbers[$size - 2];
+    return $n[1] + $n[$size - 2];
 }
 
 // c. Function with default arguments
-function greet($name, $message = "Hello")
+function greet($name, $msg = "Hello")
 {
-    echo "$message, $name!<br>";
+    echo "$msg, $name!<br>";
 }
 
 // d. Pass by value and pass by reference
@@ -38,11 +38,11 @@ function incrementByReference(&$number)
 // Testing the functions
 echo checkAge(20) . "<br>";
 
-$numbers = [5, 2, 8, 1, 9];
-echo "Sum of second largest and smallest elements: " . sumSecondLargestAndSmallest($numbers) . "<br>";
+$n = [5, 2, 8, 1, 16];
+echo "Sum of second largest and smallest elements: " . check($n) . "<br>";
 
-greet("John");
-greet("Sarah", "Hi");
+greet("Ram");
+greet("Shyam", "Hi");
 
 $value = 5;
 incrementByValue($value);

@@ -7,13 +7,10 @@
 
 <body>
     <form method="POST" action="">
-        <label for="num1">Number 1:</label>
         <input type="text" name="num1" id="num1">
         <br>
-        <label for="num2">Number 2:</label>
         <input type="text" name="num2" id="num2">
         <br>
-        <label for="operator">Operator:</label>
         <select name="operator" id="operator">
             <option value="+">+</option>
             <option value="-">-</option>
@@ -26,36 +23,34 @@
     </form>
 
     <?php
-        if ($_SERVER["REQUEST_METHOD"] === "POST") {
-            $num1 = $_POST["num1"];
-            $num2 = $_POST["num2"];
-            $operator = $_POST["operator"];
-            
-            $result = "";
-            
-            switch ($operator) {
-                case "+":
-                    $result = $num1 + $num2;
-                    break;
-                case "-":
-                    $result = $num1 - $num2;
-                    break;
-                case "*":
-                    $result = $num1 * $num2;
-                    break;
-                case "/":
-                    $result = $num1 / $num2;
-                    break;
-                case "%":
-                    $result = $num1 % $num2;
-                    break;
-                default:
-                    $result = "Invalid operator";
-                    break;
-            }
-            
-            echo "<label>Result: $result</label>";
-        }
+    error_reporting(0);
+    $num1 = $_POST["num1"];
+    $num2 = $_POST["num2"];
+    $operator = $_POST["operator"];
+
+
+    switch ($operator) {
+        case "+":
+            echo $num1 + $num2;
+            break;
+        case "-":
+            echo $num1 - $num2;
+            break;
+        case "*":
+            echo $num1 * $num2;
+            break;
+        case "/":
+            echo $num1 / $num2;
+            break;
+        case "%":
+            echo $num1 % $num2;
+            break;
+        default:
+            echo "Invalid Operator";
+            break;
+    }
+
+
     ?>
 </body>
 
