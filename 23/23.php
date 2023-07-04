@@ -40,6 +40,9 @@ include "connection.php";
                     <a href='edit.php?id=" . $row["id"] . "'>
                     <button>Edit</button>
                     </a>
+                    <a href='view.php?id=" . $row["id"] . "'>
+                    <button>View</button>
+                    </a>
                     </td>";
                     echo "</tr>";
                 }

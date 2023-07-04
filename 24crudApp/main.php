@@ -54,6 +54,8 @@ include "../connection.php";
                         <a href='edit.php?id=" . $row["id"] . "'>
                             <button type='button'>Edit</button>
                         </a>
+
+                        
                     </td>";
                     echo "</tr>";
                 }

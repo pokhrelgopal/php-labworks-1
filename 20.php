@@ -1,4 +1,8 @@
 <?php
+echo "<h3>Gopal Pokhrel <br> Roll No :20</h3> <br>";
+?>
+
+<?php
 // a. Date and time formatting options
 $curDT = date("Y-m-d H:i:s");
 echo "Current Date and Time: $curDT<br>";

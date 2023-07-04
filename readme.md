@@ -1,4 +1,4 @@
-#note: project will not work outside htdocs if server is not running
+#note: project will not work outside htdocs and if server is not running
 
 1. In connection.php change your hostname and password as per your need.
 2. Make a database named lab3.
@@ -10,4 +10,4 @@
 
    - create table todo(id int primary key auto_increment, title varchar(100), description varchar(100));
 
-   <!-- if there are any error dont bother me please, fix it yourselves. -->
+4. if there are any error dont bother me please, fix it yourselves.
